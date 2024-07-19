@@ -1,5 +1,5 @@
 /* Config */
-const twitchTvHandle = "bdougieYO";
+const twitchTvHandle = "lennrey";
 const PAUSE_DURATION = 30 * 1000; // 30 seconds
 const DISPLAY_DURATION = 10 * 1000; // 10 seconds
 
@@ -9,8 +9,8 @@ const img = new Image();
 const queue = new Queue();
 
 /* Sound Effects */
-const pewAudio = new Audio("horn.wav");
-const magicChime = new Audio("Magic_Chime.mp3");
+/* const pewAudio = new Audio("horn.wav");
+const magicChime = new Audio("Magic_Chime.mp3"); */
 
 /* GIFs */
 const beyGif = "https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif";
@@ -32,15 +32,15 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   console.log(`!${command} was typed in chat`);
 
   if (command == "yo") {
-    new gifAlert(user, beyGif, pewAudio, command);
+    new gifAlert(user, beyGif, command);
   }
 
   if (command == "welcome") {
-    new gifAlert(message, welcomeGif, magicChime, command);
+    new gifAlert(message, welcomeGif, command);
   }
 
   if (flags.broadcaster && command == "pizza") {
-    new gifAlert(message, pizzaGif, magicChime, command);
+    new gifAlert(message, pizzaGif, command);
   }
 
   if (flags.broadcaster && command == "pause") {
